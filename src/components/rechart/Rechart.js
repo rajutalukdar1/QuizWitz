@@ -17,7 +17,6 @@ const Rechart = () => {
                     }
                     return singleQuiz
                 })
-                console.log(quizData);
                 setQus(quizData);
             });
     }, [])

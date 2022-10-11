@@ -13,9 +13,9 @@ const Home = () => {
             </div>
             <div className='mx-auto my-12 gap-8 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 w-4/5'>
                 {
-                    quizData.data.map(quiz => <QusTopic
-                        key={quiz.id}
-                        quiz={quiz}
+                    quizData.data.map(topic => <QusTopic
+                        key={topic.id}
+                        topic={topic}
                     ></QusTopic>)
                 }
             </div>

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './QusTopic.css'
 
-const QusTopic = ({ quiz }) => {
-    const { name, logo, total, id } = quiz;
+const QusTopic = ({ topic }) => {
+    const { name, logo, total, id } = topic;
     return (
         <div className='card-container'>
             <img className='bg-zinc-900 rounded-md' src={logo} alt="" />

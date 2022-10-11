@@ -1,0 +1,14 @@
+.questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.questions div {
+    border-radius: 2px;
+    padding: 0.5rem 0.25rem 0.5rem 0.25rem;
+    color: white;
+    background-color: rgb(31 41 55);
+}
