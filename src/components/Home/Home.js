@@ -1,15 +1,16 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import QusTopic from '../QusTopic/QusTopic';
+import './Home.css'
 
 const Home = () => {
-    const loderData = useLoaderData()
+    const quizData = useLoaderData()
     return (
-        <div>
+        <div className='lg:grid grid-cols-4 m-10 mt-20'>
             {
-                loderData.data.map(lode => <QusTopic
-                    key={lode.id}
-                    lode={lode}
+                quizData.data.map(quiz => <QusTopic
+                    key={quiz.id}
+                    quiz={quiz}
                 ></QusTopic>)
             }
         </div>
