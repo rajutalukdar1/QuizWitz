@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './QusTopic.css'
+import { toast } from 'react-toastify';
+
 
 const QusTopic = ({ topic }) => {
     const { name, logo, total, id } = topic;

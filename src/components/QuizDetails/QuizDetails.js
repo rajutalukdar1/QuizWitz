@@ -1,10 +1,19 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import Qus from '../Qus/Qus';
 import './QuizDetails.css'
 
 const QuizDetails = ({ quiz }) => {
-    console.log(quiz)
     const { question, correctAnswer, options } = quiz;
+
+    const handelAddToCart = (qus) => {
+        if (qus === correctAnswer) {
+            toast.success('WOW CORRECT ANS')
+        }
+        else {
+            toast.error('OPPPS BAD ANS')
+        }
+    }
     return (
         <div>
             <div className='border-solid bg-blue-100 rounded-md border-black my-4 border w-1/2 mx-auto'>
@@ -13,8 +22,9 @@ const QuizDetails = ({ quiz }) => {
                 <div className='questions'>
                     {
                         options.map(qus => <Qus
-                            key={qus.id}
+                            key={qus.toString()} value={qus}
                             qus={qus}
+                            handelAddToCart={handelAddToCart}
                         ></Qus>)
                     }
                 </div>
