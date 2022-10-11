@@ -1,47 +1,47 @@
-import React from 'react';
-import { CartesianGrid, Legend, Line, LineChart, ReferenceLine, Tooltip, YAxis } from 'recharts';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Bar, BarChart, CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 const Rechart = () => {
+    const [qus, setQus] = useState([]);
+    useEffect(() => {
+        axios.get('https://openapi.programming-hero.com/api/quiz')
+            .then(data => {
+                const quizLoaded = data.data.data;
+                const quizData = quizLoaded.map(quiz => {
+                    const parst = quiz.total;
 
-    const data = [
-        {
-            "id": 1,
-            "name": "React",
-            "logo": "https://live.staticflickr.com/65535/52413593240_e00326e727_o.png",
-            "total": 8
-        },
-        {
-            "id": 2,
-            "name": "JavaScript",
-            "logo": "https://live.staticflickr.com/65535/52412638962_12e932256a_o.png",
-            "total": 9
-        },
-        {
-            "id": 4,
-            "name": "CSS",
-            "logo": "https://live.staticflickr.com/65535/52413665713_5977a693cb_o.png",
-            "total": 8
-        },
-        {
-            "id": 5,
-            "name": "Git",
-            "logo": "https://live.staticflickr.com/65535/52412639027_5692c15b3f_o.png",
-            "total": 11
-        }
-    ]
-
+                    const singleQuiz = {
+                        name: quiz.name,
+                        total: parst
+                    }
+                    return singleQuiz
+                })
+                console.log(quizData);
+                setQus(quizData);
+            });
+    }, [])
     return (
         <div>
-            <LineChart width={500} height={300} data={data} margin={{ top: 20, right: 50, left: 20, bottom: 5, }}>
-                <CartesianGrid stdDeviation="3 3" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <ReferenceLine x="page C" stroke="red" label="Max PV PAGE" />
-                <ReferenceLine y={9800} label="Max" stroke="red" />
-                <Line type="monotone" dataKey="total" stroke="#8884d8"></Line>
+            <h2 className='font-bold text-4xl m-5'>Quiz chart</h2>
+            <div className='lg:flex'>
 
-            </LineChart>
+                <BarChart width={370} height={400} data={qus}>
+                    <Bar dataKey="total" fill="#8884d8" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                </BarChart>
+
+
+                <LineChart width={370} height={400} data={qus}>
+                    <Line type="monotone" dataKey="total" stroke="#8884d8" />
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                </LineChart>
+            </div>
         </div>
     );
 };
