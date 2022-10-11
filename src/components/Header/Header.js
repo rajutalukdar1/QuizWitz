@@ -4,7 +4,7 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className='bg-slate-100'>
+        <div className='bg-slate-100 shadow-lg'>
             <div className='flex justify-between mx-auto w-4/5 py-6'>
                 <div className='sm:m-0 mr-5'>
                     <Link to='/home'><p className='text-2xl font-semibold'>QuizWitz</p></Link>

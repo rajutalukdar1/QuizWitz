@@ -9,11 +9,11 @@ const Rechart = () => {
             .then(data => {
                 const quizLoaded = data.data.data;
                 const quizData = quizLoaded.map(quiz => {
-                    const parst = quiz.total;
+                    const lodeData = quiz.total;
 
                     const singleQuiz = {
                         name: quiz.name,
-                        total: parst
+                        total: lodeData
                     }
                     return singleQuiz
                 })

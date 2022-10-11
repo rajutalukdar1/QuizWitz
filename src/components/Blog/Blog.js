@@ -13,7 +13,7 @@ const Blog = () => {
                             <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">React Router is a standard library for routing in React. It <span className='font-bold'>enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.</span></p>
                         </details>
                         <details className="w-full border rounded-lg" open="">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How does context API work?</summary><p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">he React Context API is <span className='font-bold'> a way for a React app to effectively produce global variables that can be passed around.</span> This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How does context API work?</summary><p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">The React Context API is <span className='font-bold'> a way for a React app to effectively produce global variables that can be passed around.</span> This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.
                             </p>
                         </details>
                         <details className="w-full border rounded-lg" open="">
