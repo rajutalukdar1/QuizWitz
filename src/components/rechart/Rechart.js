@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = () => {
+const Rechart = ({ total }) => {
     return (
         <div>
-            <h1>this is about</h1>
+
         </div>
     );
 };
 
-export default About;
+export default Rechart;
