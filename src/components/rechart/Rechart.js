@@ -25,7 +25,7 @@ const Rechart = () => {
             <h2 className='font-bold text-4xl m-5'>Quiz chart</h2>
             <div className='lg:flex'>
 
-                <BarChart width={370} height={400} data={qus}>
+                <BarChart width={360} height={400} data={qus}>
                     <Bar dataKey="total" fill="#8884d8" />
                     <XAxis dataKey="name" />
                     <YAxis />
@@ -33,7 +33,7 @@ const Rechart = () => {
                 </BarChart>
 
 
-                <LineChart width={370} height={400} data={qus}>
+                <LineChart width={360} height={400} data={qus}>
                     <Line type="monotone" dataKey="total" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey="name" />
